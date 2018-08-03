@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Landing from './Landing';
+import PostPage from './components/PostPage';
 import Search from './Search';
 
 const FourOhFour = () => <h1>404</h1>;
@@ -9,7 +10,7 @@ const App = () => (
   <BrowserRouter>
     <div className="app">
       <Switch>
-        <Route exact path="/" component={Landing} />
+        <Route exact path="/" component={PostPage} />
         <Route path="/search" component={Search} />
         <Route component={FourOhFour} />
       </Switch>
