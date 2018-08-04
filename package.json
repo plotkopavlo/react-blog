@@ -3,7 +3,7 @@
     "api": "node ratingsAPI.js",
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
+    "format": ">prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -48,7 +48,7 @@
     "babel-preset-env": "1.5.1",
     "babel-preset-react": "6.24.1",
     "enzyme": "2.8.2",
-    "eslint": "3.19.0",
+    "eslint": ">=3.19.0",
     "eslint-config-airbnb": "15.0.1",
     "eslint-config-prettier": "2.1.1",
     "eslint-config-react": "1.1.7",
@@ -64,7 +64,7 @@
     "jest-serializer-enzyme": "1.0.0",
     "moxios": "0.4.0",
     "nodemon": "1.11.0",
-    "prettier": "1.3.1",
+    "prettier": ">=1.3.1",
     "react-hot-loader": "3.0.0-beta.6",
     "react-test-renderer": "15.5.4",
     "webpack-dev-server": "2.4.5"
@@ -73,7 +73,7 @@
   "version": "3.0.0",
   "description": "A Complete Intro to React workshop",
   "main": "server.js",
-  "repository": "git@github.com:btholt/complete-intro-to-react.git",
+  "repository": "it@github.com:btholt/complete-intro-to-react.git",
   "author": "Brian Holt <btholt@gmail.com>",
   "license": "MIT"
 }

@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import ShowCard from './ShowCard';
-import preload from '../data.json';
+import React, { Component } from "react";
+import ShowCard from "./ShowCard";
+import preload from "../data.json";
 
 class Search extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      searchTerm: ''
+      searchTerm: ""
     };
 
-    this.handleSearchTermChange=this.handleSearchTermChange.bind(this);
-  };
+    this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
+  }
 
-  handleSearchTermChange (event) {
+  handleSearchTermChange(event) {
     this.setState({ searchTerm: event.target.value });
-  };
+  }
   render() {
     return (
       <div className="search">
@@ -31,9 +31,13 @@ class Search extends Component {
           {preload.shows
             .filter(
               show =>
-                `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0
+                `${show.title} ${show.description}`
+                  .toUpperCase()
+                  .indexOf(this.state.searchTerm.toUpperCase()) >= 0
             )
-            .map(show => <ShowCard key={show.imdbID} {...show} />)}
+            .map(show => (
+              <ShowCard key={show.imdbID} {...show} />
+            ))}
         </div>
       </div>
     );
