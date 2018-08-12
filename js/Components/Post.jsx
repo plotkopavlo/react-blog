@@ -4,11 +4,11 @@ class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Hello Wordl!",
-      text: "smile, smile",
+      title: props.title,
+      text: props.text,
       image: {
-        src: "/public/img/1.jpg",
-        alt: "none"
+        src: `/public/img/posters/${props.image.src}`,
+        alt: props.image.alt
       }
     };
   }

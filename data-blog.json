@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "title": "Atlanta",
+      "text": "Two cousins, with different views on art versus commerce, on their way up through the Atlanta rap scene; \"Earnest 'Earn' Marks,\" an ambitious college drop-out and his estranged cousin, who suddenly becomes a star.",
+      "image": {
+        "src": "a.jpg",
+        "alt": "Atlanta"
+      }
+    },
+    {
+      "title": "Billions",
+      "text": "U.S. Attorney Chuck Rhoades goes after hedge fund king, Bobby \"Axe\" Axelrod in a battle between two powerful New York figures.",
+      "image": {
+        "src": "b.jpg",
+        "alt": "Billions"
+      }
+    },
+    {
+      "title": "Black Mirror",
+      "text": "A television anthology series that shows the dark side of life and technology.",
+      "image": {
+        "src": "bm.jpg",
+        "alt": "Billions"
+      }
+    }
+  ]
+}
