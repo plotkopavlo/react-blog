@@ -1,20 +1,15 @@
 import React from 'react';
 import PostList from "./Components/PostList";
-import Navigation from "./Components/Navigation";
+import TagsList from "./Components/TagsList";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 const Landing = () => (
   <div className="wrapper">
-    <header className="header">
-     <div className="header__right">
-       <Navigation className="header__nav" />
-     </div>
-      <div className="header__left search">
-        <label htmlFor="search-input"> Search post</label>
-        <input type="text" className="search__input" id="search__input"/>
-      </div>
-
-    </header>
-    <PostList />
+    <Header className="blog__header" />
+    <PostList className="blog__posts" />
+    <TagsList className="blog__tags tags" />
+    <Footer className="blog__footer" />
   </div>
 );
 

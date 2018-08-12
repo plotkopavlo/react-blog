@@ -19,7 +19,7 @@ class PostList extends Component {
       <section className="post-list">
         <h1 className="post-list__title">Blog List</h1>
         {preload.posts.map(post => (
-          <Post {...post} />
+          <Post className="post-list__item" {...post} />
         ))}
       </section>
     );
