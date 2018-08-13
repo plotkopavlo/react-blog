@@ -1,24 +1,28 @@
 /* eslint no-console: 0 */
-const express = require('express');
-const cors = require('cors');
-const fs = require('fs');
+const express = require("express");
+const cors = require("cors");
+const fs = require("fs");
 
-const buffer = fs.readFileSync('./data.json');
-const showsObj = JSON.parse(buffer);
+const buffer = fs.readFileSync("./data-blog.json");
+const postsObj = JSON.parse(buffer);
+
 const app = express();
 app.use(cors());
-const ratedShows = showsObj.shows.map(show =>
-  Object.assign({ rating: `${Math.floor(Math.random() * 9)}.${Math.floor(Math.random() * 9)}` }, show)
-);
 
-app.get('/:id', (req, res) => {
-  const show = ratedShows.find(item => item.imdbID === req.params.id);
-  if (show) {
-    console.log(show.title);
-    setTimeout(() => res.json(show), Math.floor(Math.random() * 5000));
+app.get("/:id", (req, res) => {
+  const post = postsObj.posts.find(item => {
+    console.log(item.id);
+    console.log(req.params.id);
+
+    return item.id == req.params.id;
+  });
+  console.log(req.params.id);
+
+  if (post) {
+    res.json(post);
   } else {
     console.log(404, req.params.id);
-    res.status(404).json({ error: 'show not found' });
+    res.status(404).json({ error: "post not found" });
   }
 });
 

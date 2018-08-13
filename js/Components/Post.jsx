@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import PropTypes, { string } from "prop-types";
 
 class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: props.title,
-      text: props.text,
+      dateCreate: props.dateCreate || "Aug 8",
+      timeRead: props.timeRead || "4 min read",
       image: {
         src: `/public/img/posters/${props.image.src}`,
         alt: props.image.alt
@@ -16,13 +18,7 @@ class Post extends Component {
   render() {
     return (
       <article className="post">
-        <h1 className="post__title">
-          <a href={this.state.href}>{this.state.title}</a>
-        </h1>
-        <div className="post__text">{this.state.text}</div>
-
-        <div className="post__picture">
-          <a href="">
+          <a href="" className="post__picture">
             <img
               src={this.state.image.src}
               alt={this.state.image.alt}
@@ -30,10 +26,23 @@ class Post extends Component {
               className="post__img"
             />
           </a>
-        </div>
+        <h1 className="post__title">
+          <a href={this.state.href}>{this.state.title}</a>
+        </h1>
+      <div className="post__details">
+        <div className="post__timeCreate">{this.state.dateCreate}</div>
+        <div className="post__timeCreate">{this.state.timeRead}</div>
+      </div>
       </article>
     );
   }
 }
+Post.propTypes = {
+  title: string.isRequired,
+  image: PropTypes.shape({
+    src: string.isRequired,
+    alt: string.isRequired
+  })
+};
 
 export default Post;
